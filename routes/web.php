@@ -8,7 +8,13 @@ Route::get('/', function () {
 });
 Route::get('detail', function () {
     return view('landing.pages.detail');
+});
 
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return view('admin.master');
+    })->name('index');
 });
 
 Route::get('/dashboard', function () {
@@ -21,5 +27,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-
+require __DIR__ . '/auth.php';
