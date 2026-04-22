@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('landing.pages.index');
 });
@@ -15,6 +16,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return view('admin.master');
     })->name('index');
+
+    Route::resource('/zones', App\Http\Controllers\ZoneController::class);
 });
 
 Route::get('/dashboard', function () {
