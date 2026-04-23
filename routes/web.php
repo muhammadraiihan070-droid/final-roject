@@ -18,6 +18,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     })->name('index');
 
     Route::resource('/zones', App\Http\Controllers\ZoneController::class);
+    Route::resource('/attractions', App\Http\Controllers\AttractionController::class);
 });
 
 Route::get('/dashboard', function () {

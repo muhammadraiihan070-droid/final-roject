@@ -12,17 +12,17 @@
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" id="description" name="descrition" rows="3" required></textarea>
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
     </div>
     <div class="mb-3">
         <label for="price_range" class="form-label">Price Range</label>
-        <input type="text" class="form-control" id="price_range" name="price_range" required><input>
+        <input type="text" class="form-control" id="price_range" name="price_range" required>
     </div>
     <div class="mb-3">
         <label for="image" class="form-label">Image</label>
-        <input type="file" class="form-control" id="image" name="image" required><input>
+        <input type="file" class="form-control" id="image" name="image" required>
     </div>
-    <button type="sunmit" class="btn btn-primary">Create Zones</button>
+    <button type="submit" class="btn btn-primary">Create Zones</button>
 </form>
 
 @endsection

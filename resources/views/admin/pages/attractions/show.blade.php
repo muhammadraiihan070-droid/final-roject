@@ -1,31 +1,32 @@
 @extends('admin.master')
 
 @section('content')
-    <h1>Zone Details</h1>
+
+<h1>Attractions Details</h1>
     <hr>
 
     @if($zone)
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
-                    Name: {{ $zone->name }}
+                    Name: {{ $attraction->name }}
                 </h5>
 
                 <p class="card-text">
                     <strong>Price Range:</strong>
-                    {{ $zone->price_range ?? '-' }}
+                    {{ $attraction->ticket_price ?? '-' }}
                 </p>
 
                 <p class="card-text">
                     <strong>Description:</strong><br>
-                    {{ $zone->description ?? 'No description' }}
+                    {{ $attraction->description ?? 'No description' }}
                 </p>
 
-                @if(!empty($zone->image))
+                @if(!empty($attraction->image))
                     <div class="mt-3">
                         <strong>Image:</strong><br>
-                        <img src="{{ asset('storage/image/' . $zone->image) }}"
-                             alt="{{ $zone->name }}"
+                        <img src="{{ asset('storage/image/' . $attraction->image) }}"
+                             alt="{{ $attraction->name }}"
                              class="img-fluid mt-2"
                              style="max-width: 400px;">
                     </div>
@@ -33,30 +34,31 @@
             </div>
 
             <div class="card-footer">
-                <a href="{{ route('admin.zones.edit', $zone->id) }}" class="btn btn-warning">
+                <a href="{{ route('admin.attractions.edit', $attraction->id) }}" class="btn btn-warning">
                     Edit
                 </a>
-                <a href="{{ route('admin.zones.index') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.attractions.index') }}" class="btn btn-secondary">
                     Back to List
                 </a>
             </div>
         </div>
 
         {{-- <div class="mt-4">
-            <h3>Attractions in this Zone</h3>
+            <h3>Attractions in this Attraction</h3>
             <hr>
 
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Ticket Price</th>
                         <th>Image</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($zone->attractions as $attraction)
+                    @forelse ($attraction-attractions as $attraction)
                         <tr>
                             <td>{{ $attraction->name }}</td>
 
@@ -100,4 +102,5 @@
             Data zone tidak ditemukan.
         </div>
     @endif
+
 @endsection

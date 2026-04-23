@@ -23,7 +23,7 @@ class ZoneController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price_range' => 'required|numeric',
+            'price_range' => 'required|',
             'image' => 'nullable|image|max:2048|mimes:jpg,jpeg,png',
     ]);
 
@@ -41,26 +41,27 @@ class ZoneController extends Controller
             'image' => $imageName,
         ]);
 
-        return redirect()->route('destinations.index')
+        return redirect()->route('admin.zones.index')
                          ->with('success', 'Berhasil tambah data');
     }
 
     public function show($id)
     {
-        return view('admin.pages.zones.show');
+$zone = Zone::find($id);
+        return view('admin.pages.zones.show',compact('zone') );
     }
 
     public function edit($id)
     {
-        return view('admin.pages.zones.edit');
+        return view('admin.pages.zones.edit', );
     }
 
     public function update(Request $request, $id)
     {
         $validated = $request->validated([
             'name' => 'required',
-            'description' => 'nullable',
-            'ticket_price'=> 'required|numeric',
+            'description' => 'required',
+            'price_range'=> 'required|',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             
         ]);
@@ -83,9 +84,9 @@ class ZoneController extends Controller
        $zone=Zone::find($id);
        if ($zone) {
        $zone->delete();
-       return redirect('/zones')->with('success', 'Zones delete successfully.');
+       return redirect()->route('admin.zones.index')->with('success', 'Zones delete successfully.');
     } else {
-        return redirect('/zones')->with('error', 'Zone not found.');
+        return redirect()->route('admin.zones.index')->with('error', 'Zone not found.');
     }
 
     }

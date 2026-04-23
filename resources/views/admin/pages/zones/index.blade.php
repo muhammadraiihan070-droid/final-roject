@@ -6,10 +6,7 @@
 <a href="{{ route('admin.zones.create')}}" class="btn btn-primary">create</a>
 <hr>
 
-<h1>Zones</h1>
 
-<a href="{{ route('admin.zones.create') }}" class="btn btn-primary">Create Zone</a>
-<hr>
 
 <table class="table">
     <thead>
@@ -26,7 +23,7 @@
                 <td>{{ $zone->id }}</td>
                 <td>{{ $zone->price_range }}</td>
                 <td>
-                    <img src="{{ asset('storage/' . $zone->image) }}" alt="{{ $zone->name }}" width="100">
+                    <img src="{{ asset('storage/image/' . $zone->image) }}" alt="{{ $zone->name }}" width="100">
                 </td>
                 <td>
                     <a href="{{ route('admin.zones.show', $zone) }}" class="btn btn-info">View</a>
