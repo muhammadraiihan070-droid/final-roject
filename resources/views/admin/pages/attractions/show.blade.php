@@ -5,7 +5,7 @@
 <h1>Attractions Details</h1>
     <hr>
 
-    @if($zone)
+    @if($attraction)
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
@@ -13,7 +13,7 @@
                 </h5>
 
                 <p class="card-text">
-                    <strong>Price Range:</strong>
+                    <strong>Ticket Price:</strong>
                     {{ $attraction->ticket_price ?? '-' }}
                 </p>
 
@@ -25,10 +25,8 @@
                 @if(!empty($attraction->image))
                     <div class="mt-3">
                         <strong>Image:</strong><br>
-                        <img src="{{ asset('storage/image/' . $attraction->image) }}"
-                             alt="{{ $attraction->name }}"
-                             class="img-fluid mt-2"
-                             style="max-width: 400px;">
+                        <img src="{{ asset('storage/images/' . $attraction->image) }}" alt="{{ $attraction->name }}" width="150">                </div>
+
                     </div>
                 @endif
             </div>
@@ -99,7 +97,7 @@
         </div> --}}
     @else
         <div class="alert alert-danger">
-            Data zone tidak ditemukan.
+            Data attraction tidak ditemukan.
         </div>
     @endif
 

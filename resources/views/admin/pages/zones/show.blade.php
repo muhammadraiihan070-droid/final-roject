@@ -24,10 +24,8 @@
                 @if(!empty($zone->image))
                     <div class="mt-3">
                         <strong>Image:</strong><br>
-                        <img src="{{ asset('storage/image/' . $zone->image) }}"
-                             alt="{{ $zone->name }}"
-                             class="img-fluid mt-2"
-                             style="max-width: 400px;">
+                       <img src="{{ asset('storage/images/' . $zone->image) }}" alt="{{ $zone->name }}" width="150">                </div>
+
                     </div>
                 @endif
             </div>

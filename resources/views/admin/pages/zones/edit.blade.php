@@ -26,8 +26,7 @@
             <input type="file" class="form-control" id="image" name="image">
             @if($zone->image)
                 <div class="mt-2">
-                    <img src="{{ asset('storage/' . $zone->image) }}" alt="{{ $zone->name }}" width="150">
-                </div>
+<img src="{{ asset('storage/images/' . $zone->image) }}" alt="{{ $zone->name }}" width="150">                </div>
             @endif
             @error('image') <div class="text-danger">{{ $message }}</div> @enderror
         </div>

@@ -5,9 +5,8 @@
 <section class="section-top">
 		<div class="container">
 			<div class="col-lg-10 offset-lg-1 col-xs-12 text-center">
-				<div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s"
-					data-wow-offset="0">
-					<h1>Single Property</h1>
+				<div class="section-top-title wow fadeInRight">
+					<h1>{{ $zone->name }}</h1>
 				</div><!-- //.HERO-TEXT -->
 			</div><!--- END COL -->
 		</div><!--- END CONTAINER -->
@@ -20,7 +19,9 @@
 			<div class="row">
 				<div class="col-md-9 col-sm-9 col-xs-12">
 					<div class="property_single_details_slide">
-						<img src="{{ asset('storage/landing/assets/img/2.jpg') }}" class="img-fluid" alt="About-Slide">
+						<img src="{{ storage::url($zone->image)) }}"
+						 class="img-fluid" 
+						 alt="{{ zone->name }}">
 					</div>
 					<div class="property_single_details_price">
 						<h1>2045 B Street</h1>

@@ -23,7 +23,7 @@
                 <td>{{ $zone->id }}</td>
                 <td>{{ $zone->price_range }}</td>
                 <td>
-                    <img src="{{ asset('storage/image/' . $zone->image) }}" alt="{{ $zone->name }}" width="100">
+<img src="{{ asset('storage/images/' . $zone->image) }}" alt="{{ $zone->name }}" width="150">                </div>
                 </td>
                 <td>
                     <a href="{{ route('admin.zones.show', $zone) }}" class="btn btn-info">View</a>

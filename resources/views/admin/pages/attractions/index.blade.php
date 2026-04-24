@@ -22,9 +22,10 @@
         @forelse ($attractions as $attraction)
             <tr>
                 <td>{{ $attraction->id }}</td>
+                <td>{{ $attraction->name }}</td>
                 <td>{{ $attraction->ticket_price }}</td>
                 <td>
-                    <img src="{{ asset('storage/image/' . $attraction->image) }}" alt="{{ $attraction->name }}" width="100">
+                    <img src="{{ asset('storage/images/' . $attraction->image) }}" alt="{{ $attraction->name }}" width="100">
                 </td>
                 <td>
                     <a href="{{ route('admin.attractions.show', $attraction) }}" class="btn btn-info">View</a>

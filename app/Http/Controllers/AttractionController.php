@@ -38,8 +38,7 @@ class AttractionController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $validated['image'] = basename($imagePath);
+$imagePath = $request->file('image')->store('images', 'public');            $validated['image'] = basename($imagePath);
         }
 
         Attraction::create($validated);

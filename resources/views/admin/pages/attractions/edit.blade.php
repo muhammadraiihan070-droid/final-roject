@@ -18,8 +18,8 @@
             @error('description') <div class="text-danger">{{ $message }}</div> @enderror
         </div>
         <div class="mb-3">
-            <label for="price_range" class="form-label">Price Range</label>
-            <input type="text" class="form-control" id="price_range" name="price_range" value="{{ old('price_range', $attraction->price_range) }}" required>
+            <label for="ticket_price" class="form-label">Ticket Price</label>
+            <input type="text" class="form-control" id="ticket_price" name="ticket_price" value="{{ old('ticket_price', $attraction->ticket_price) }}" required>
             @error('ticket_price') <div class="text-danger">{{ $message }}</div> @enderror
         </div>
         <div class="mb-3">
@@ -27,7 +27,7 @@
             <input type="file" class="form-control" id="image" name="image">
             @if($attraction->image)
                 <div class="mt-2">
-                    <img src="{{ asset('storage/' . $attraction->image) }}" alt="{{ $attraction->name }}" width="150">
+<img src="{{ asset('storage/images/' . $attraction->image) }}" alt="{{ $attraction->name }}" width="150">                </div>
                 </div>
             @endif
             @error('image') <div class="text-danger">{{ $message }}</div> @enderror
